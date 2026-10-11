@@ -1,0 +1,195 @@
+/* components.css - Shared product-card component (grid, card frame, color dots, wishlist heart button) reused across Category, Offers and Wishlist views. NOTE: this file is a small, sensible addition beyond the original css file list in frontend-architecture.md section 2, split out from the old 'Product Cards Grid Engine' block because it's a cross-view component, not specific to one page. */
+/* Product Cards Grid Engine */
+.products-dynamic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.product-display-card {
+    background-color: var(--pure-white);
+    border-radius: var(--radius-premium-md);
+    padding: 12px;
+    position: relative;
+    transition: var(--transition-premium);
+}
+
+    .product-display-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+    }
+
+.card-img-frame {
+    /* The frame is a real <a href> (so ctrl/middle-click and "copy link" work), which is inline
+       by default - it must be a block for the height/overflow/aspect-ratio below to apply. */
+    display: block;
+    aspect-ratio: 4 / 5;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--bg-warm-canvas);
+    cursor: pointer;
+}
+
+    .card-img-frame img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 0.3s ease;
+    }
+
+.btn-wishlist-toggle-heart {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: var(--pure-white);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .btn-wishlist-toggle-heart.saved svg {
+        fill: var(--highlight-red);
+        stroke: var(--highlight-red);
+    }
+
+.card-meta-info {
+    padding: 12px 4px 4px 4px;
+}
+
+    .card-meta-info h3 {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+
+.card-price-row {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.card-color-circles-palette {
+    display: flex;
+    gap: 6px;
+}
+
+.color-dot-spec {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.1);
+    position: relative;
+}
+
+    .color-dot-spec.selected-active::after {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        width: 18px;
+        height: 18px;
+        border: 1px solid var(--accent-clay-deep);
+        border-radius: 50%;
+    }
+
+
+/* --- Added during rebuild: the rest of productCard.js's markup that had no matching rules
+   yet (name/price text, colour dots, wishlist heart button) plus the generic loading/empty/
+   error states every view's product grid can show. --- */
+.card-product-name {
+    font-size: 0.95rem;
+    color: var(--text-pure-dark);
+    margin: 10px 0 4px;
+}
+
+.price-current {
+    font-weight: 700;
+    color: var(--text-pure-dark);
+}
+
+.price-struck {
+    text-decoration: line-through;
+    color: var(--text-muted-clay);
+    margin-right: 8px;
+    font-size: 0.85rem;
+}
+
+.color-dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-right: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.wishlist-heart-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--pure-white);
+    border: none;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--text-muted-clay);
+    z-index: 2;
+}
+
+.wishlist-heart-btn.active {
+    color: var(--highlight-red);
+}
+
+.compare-checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--text-muted-clay);
+    margin-top: 6px;
+}
+
+.loading-message,
+.empty-grid-message {
+    text-align: center;
+    color: var(--text-muted-clay);
+    padding: 32px 0;
+    grid-column: 1 / -1;
+}
+
+.error-message {
+    text-align: center;
+    color: var(--highlight-red);
+    padding: 32px 0;
+    grid-column: 1 / -1;
+}
+
+/* --- Standalone build: small notice shown only while the built-in demo backend is active. --- */
+.demo-mode-note {
+    margin-top: 16px;
+    padding: 10px 14px;
+    border-radius: var(--radius-premium-md);
+    background: var(--surface-nude-base);
+    color: var(--text-muted-clay);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* --- Standalone build: grids placed directly inside a view (wishlist, "You Might Also Like")
+   had no side padding and touched the screen edges. The category and offers pages already
+   pad their own grids (.category-page-layout, .offers-grid), so those are excluded. --- */
+.spa-view > .products-dynamic-grid:not(.offers-grid) {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 40px;
+}

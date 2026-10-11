@@ -1,0 +1,45 @@
+/* offers.css - Offers view: wide promo grid layout and offer badge. NOTE: this file is a small, sensible addition beyond frontend-architecture.md's css file list, since the existing HTML/CSS already has a dedicated Offers view that needed a home. */
+/* ==========================================================================
+   Offers View Framework (Wide View Layout, Max 4 Items Per Row)
+   ========================================================================== */
+.offers-view-header {
+    text-align: center;
+    padding: 40px 0;
+}
+
+    .offers-view-header h2 {
+        font-size: 36px;
+        font-weight: 800;
+    }
+
+.wide-offers-layout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 32px;
+    padding: 0 24px 60px 24px;
+}
+
+    .wide-offers-layout-grid .product-display-card {
+        padding: 16px;
+    }
+
+.offer-badge-alert {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    background-color: var(--highlight-red);
+    color: var(--pure-white);
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    z-index: 2;
+}
+
+
+/* --- Added during rebuild: grid wrapper class the offers view's HTML uses. --- */
+.offers-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 50px;
+}

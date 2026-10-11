@@ -1,0 +1,18 @@
+/* variables.css - Warm/earthy theme design tokens (colors, radii, transitions). Moved as-is from the original StyleSheet1.css root block; nothing renamed or changed. */
+/* ==========================================================================
+   Premium Warm & Earthy Structural Theme Variables (Based on Image 8 specifications)
+   ========================================================================== */
+:root {
+    --bg-warm-canvas: #faf6f0; /* The exact premium calming background tone */
+    --surface-nude-base: #f2e7dc; /* Soft nude/beige tone for cards, wrappers, modules */
+    --accent-clay-deep: #222222; /* Bold black/dark highlight for strong clear structure */
+    --text-pure-dark: #1a1a1a; /* High contrast text definitions */
+    --text-muted-clay: #6e6a64; /* Balanced supportive paragraph tone */
+    --pure-white: #ffffff;
+    --highlight-red: #c94a36;
+    --navbar-height: 80px;
+    --radius-premium-lg: 30px;
+    --radius-premium-md: 16px;
+    --transition-premium: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+

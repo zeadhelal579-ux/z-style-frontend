@@ -1,0 +1,255 @@
+/* home.css - Home view: hero grid, trust bar, category circle slider. Moved as-is from the original stylesheet. */
+/* ==========================================================================
+   Home View Framework (3 Huge Hero Images & Trust bar)
+   ========================================================================== */
+.hero-grid-premium {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 24px;
+    padding: 0 24px;
+}
+
+.hero-card {
+    position: relative;
+    border-radius: var(--radius-premium-md);
+    overflow: hidden;
+    height: 520px;
+    background-color: var(--surface-nude-base);
+}
+
+.hero-sub-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+    .hero-sub-column .hero-card {
+        height: 248px;
+    }
+
+.hero-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.hero-card:hover img {
+    transform: scale(1.02);
+}
+
+.hero-overlay-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 20%, transparent 100%);
+    padding: 40px;
+    color: var(--pure-white);
+}
+
+    .hero-overlay-content h2 {
+        font-size: 42px;
+        font-weight: 800;
+        line-height: 1.1;
+        margin: 8px 0;
+    }
+
+    .hero-overlay-content h3 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .hero-overlay-content p {
+        color: #e2dfda;
+        font-size: 15px;
+        margin-bottom: 20px;
+        max-width: 500px;
+    }
+
+    .hero-overlay-content .tag {
+        font-size: 11px;
+        font-weight: 700;
+        background: rgba(255,255,255,0.2);
+        padding: 4px 10px;
+        border-radius: 12px;
+    }
+
+.btn-hero-action, .btn-hero-action-sm {
+    background-color: var(--bg-warm-canvas);
+    color: var(--text-pure-dark);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    transition: var(--transition-premium);
+}
+
+.btn-hero-action-sm {
+    padding: 8px 18px;
+    font-size: 12px;
+}
+
+    .btn-hero-action:hover, .btn-hero-action-sm:hover {
+        transform: translateY(-2px);
+    }
+
+/* Detached Isolated Trust Bar */
+.detached-trust-wrapper {
+    background-color: var(--surface-nude-base);
+    border-radius: var(--radius-premium-md);
+    margin: 40px 24px;
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.trust-icon {
+    font-size: 22px;
+    color: var(--accent-clay-deep);
+}
+
+.trust-meta h4 {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.trust-meta p {
+    font-size: 12px;
+    color: var(--text-muted-clay);
+}
+
+/* Categories Slider Section */
+.slider-section-container {
+    padding: 0 24px 60px 24px;
+}
+
+.slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.slider-arrows {
+    display: flex;
+    gap: 8px;
+}
+
+.arrow-btn {
+    background-color: var(--surface-nude-base);
+    border: 1px solid rgba(34,34,34,0.05);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-premium);
+}
+
+    .arrow-btn:hover {
+        background-color: var(--accent-clay-deep);
+        color: var(--bg-warm-canvas);
+    }
+
+.categories-slider-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+}
+
+.circle-cat-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    min-width: 120px;
+}
+
+.circle-frame {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--surface-nude-base);
+    transition: var(--transition-premium);
+}
+
+    .circle-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.circle-cat-node:hover .circle-frame {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.circle-cat-node span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* --- Added during rebuild: category-circle slider (now data-driven from
+   api.getCategories() instead of hardcoded) and thin hero-card size modifiers - sizing
+   itself already comes from the .hero-sub-column .hero-card descendant rule above, these
+   just make the two roles explicit for anyone reading the markup. --- */
+.main-offer { grid-row: span 2; }
+.sub-seller { }
+
+.category-circles-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 24px 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category-circle-item {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.category-circle-img {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--surface-nude-base);
+    border: 2px solid var(--surface-nude-base);
+    transition: var(--transition-premium);
+}
+
+.category-circle-item:hover .category-circle-img {
+    border-color: var(--accent-clay-deep);
+}
+
+.category-circle-label {
+    font-size: 0.85rem;
+    color: var(--text-pure-dark);
+}

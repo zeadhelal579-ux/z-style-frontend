@@ -1,0 +1,94 @@
+/* profile.css - New styles for the profile side panel (frontend-architecture.md section 9, gap #4: explicitly required in the original request but never built). A right-side slide-in panel, matching the modal/card language used elsewhere (utility-popup-modal). */
+
+.profile-side-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: min(360px, 85vw);
+    background: var(--pure-white);
+    padding: 32px 26px;
+    transform: translateX(100%);
+    visibility: hidden; /* a closed panel must not leak its shadow into the page or be tabbable */
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), visibility 0s linear 0.4s;
+    z-index: 1200; /* above the navbar (1000), below the toast (3000) and chatbot (2500) */
+}
+
+.profile-side-panel.open {
+    transform: translateX(0);
+    visibility: visible;
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.12);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), visibility 0s;
+}
+
+.profile-side-panel h3 {
+    color: var(--text-pure-dark);
+    margin-bottom: 18px;
+    font-size: 1.3rem;
+}
+
+.profile-side-panel p {
+    color: var(--text-muted-clay);
+    font-size: 0.92rem;
+    margin-bottom: 10px;
+}
+
+.profile-side-panel .modal-close-cross {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: auto; /* wishlist.css anchors the same class on the right; without this it stretches */
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--text-pure-dark);
+}
+
+.profile-logout-btn {
+    margin-top: 24px;
+    width: 100%;
+}
+
+.btn-nav-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface-nude-base);
+    border: none;
+    border-radius: var(--radius-premium-md);
+    padding: 8px 16px;
+    cursor: pointer;
+    color: var(--text-pure-dark);
+    font-weight: 600;
+}
+
+.profile-icon-circle {
+    font-size: 0.6rem;
+    color: var(--highlight-red);
+}
+
+/* --- Standalone build: shortcuts to the Orders and Complaints pages. --- */
+.profile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.profile-link-btn {
+    padding: 12px 16px;
+    border: none;
+    border-radius: var(--radius-premium-md);
+    background: var(--surface-nude-base);
+    color: var(--text-pure-dark);
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: var(--transition-premium);
+}
+
+.profile-link-btn:hover {
+    background: var(--accent-clay-deep);
+    color: var(--bg-warm-canvas);
+}

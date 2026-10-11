@@ -1,0 +1,153 @@
+/* auth.css - Login / Sign Up view: tabs, form fields, password visibility toggle. Moved as-is from the original stylesheet. */
+/* ==========================================================================
+   Auth Framework (Layout Matching Image 11 look specification)
+   ========================================================================== */
+.auth-module-card {
+    background-color: var(--pure-white);
+    max-width: 460px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: var(--radius-premium-md);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+}
+
+.auth-tabs-toggle {
+    display: flex;
+    gap: 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.auth-tab-btn {
+    background: none;
+    border: none;
+    padding-bottom: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--text-muted-clay);
+    position: relative;
+}
+
+    .auth-tab-btn.active {
+        color: var(--text-pure-dark);
+    }
+
+        .auth-tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-clay-deep);
+        }
+
+.form-input-wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+    .form-input-wrapper label {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--text-muted-clay);
+    }
+
+    .form-input-wrapper input {
+        width: 100%;
+        min-width: 0;
+        padding: 12px 16px;
+        border: 1px solid rgba(34,34,34,0.1);
+        border-radius: 8px;
+        outline: none;
+        font-size: 14px;
+        background-color: var(--bg-warm-canvas);
+    }
+
+        .form-input-wrapper input:focus {
+            border-color: var(--accent-clay-deep);
+        }
+
+.form-row-twin {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 16px;
+}
+
+.hidden-fields-group {
+    display: none;
+}
+
+    .hidden-fields-group.visible {
+        display: block;
+    }
+
+.password-input-relative-container {
+    position: relative;
+}
+
+    .password-input-relative-container input {
+        width: 100%;
+        padding-right: 44px;
+    }
+
+.password-toggle-eye {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+}
+
+.form-actions-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.btn-form-secondary {
+    background: none;
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-form-primary {
+    background-color: var(--accent-clay-deep);
+    color: var(--bg-warm-canvas);
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+
+/* --- Added during rebuild: inline error banner + the "field was wrong" flash state, used by
+   views/auth.js's error handling (only the offending field clears/flashes, not the whole
+   form - see project-report.md section 3.1). --- */
+.auth-error-message {
+    color: var(--highlight-red);
+    background: rgba(201, 74, 54, 0.08);
+    padding: 10px 14px;
+    border-radius: var(--radius-premium-md);
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+}
+
+.field-error {
+    border-color: var(--highlight-red) !important;
+    animation: field-flash 0.3s ease;
+}
+
+@keyframes field-flash {
+    0%, 100% { background: var(--bg-warm-canvas); }
+    50% { background: rgba(201, 74, 54, 0.12); }
+}

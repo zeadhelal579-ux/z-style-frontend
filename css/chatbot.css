@@ -1,0 +1,119 @@
+/* chatbot.css - Floating chatbot widget (the one Arabic-language surface in the UI). Moved as-is from the original stylesheet. */
+/* ==========================================================================
+   Smart Chatbot Widget Framework (Arabic Interface Mirror)
+   ========================================================================== */
+.chatbot-floating-anchor {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 2500;
+}
+
+.chatbot-toggle-sphere {
+    background-color: var(--accent-clay-deep);
+    color: var(--bg-warm-canvas);
+    border: none;
+    padding: 14px 24px;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.chatbot-window-box {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    width: 340px;
+    height: 460px;
+    background-color: var(--pure-white);
+    border-radius: var(--radius-premium-md);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+    .chatbot-window-box.open {
+        display: flex;
+    }
+
+.chat-header-bar {
+    background-color: var(--surface-nude-base);
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.btn-close-chat {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.chat-logs-stream {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: var(--bg-warm-canvas);
+}
+
+.chat-msg {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.4;
+    direction: rtl;
+}
+
+    .chat-msg.system-node {
+        background-color: var(--surface-nude-base);
+        align-self: flex-start;
+    }
+
+    .chat-msg.user-node {
+        background-color: var(--accent-clay-deep);
+        color: var(--bg-warm-canvas);
+        align-self: flex-end;
+        direction: ltr;
+    }
+
+.chat-input-row {
+    padding: 12px;
+    display: flex;
+    gap: 8px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+    .chat-input-row input {
+        flex: 1;
+        padding: 10px 14px;
+        border-radius: 20px;
+        border: 1px solid rgba(0,0,0,0.1);
+        outline: none;
+        font-size: 13px;
+        direction: rtl;
+    }
+
+.btn-send-chat {
+    background-color: var(--accent-clay-deep);
+    color: var(--bg-warm-canvas);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

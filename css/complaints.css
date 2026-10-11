@@ -1,0 +1,76 @@
+/* complaints.css - New styles for the Complaints view (project-report.md gap: this page did not exist at all in the original project). */
+
+.complaints-layout {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+.complaint-form-card {
+    background: var(--pure-white);
+    border-radius: var(--radius-premium-lg);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.complaint-form-card select,
+.complaint-form-card textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: var(--radius-premium-md);
+    border: 1px solid var(--surface-nude-base);
+    background: var(--bg-warm-canvas);
+    color: var(--text-pure-dark);
+    font-family: inherit;
+    resize: vertical;
+}
+
+.complaint-error-message {
+    color: var(--highlight-red);
+    font-size: 0.85rem;
+}
+
+.complaints-list-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.complaint-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--surface-nude-base);
+    border-radius: var(--radius-premium-md);
+    padding: 16px 18px;
+}
+
+.complaint-order-ref {
+    font-size: 0.8rem;
+    color: var(--text-muted-clay);
+    margin-bottom: 4px;
+}
+
+.complaint-message-text {
+    color: var(--text-pure-dark);
+    font-size: 0.92rem;
+}
+
+.complaint-row button {
+    background: none;
+    border: none;
+    color: var(--highlight-red);
+    cursor: pointer;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+    .complaints-layout { grid-template-columns: 1fr; }
+}

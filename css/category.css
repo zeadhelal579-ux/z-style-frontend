@@ -1,0 +1,232 @@
+/* category.css - Category view: recently-viewed stripe, sidebar filters, products grid wrapper. Moved as-is from the original stylesheet. */
+/* ==========================================================================
+   Category Feed Framework (Sidebar Filter Left, Stripe Top)
+   ========================================================================== */
+.recently-viewed-stripe {
+    background-color: var(--surface-nude-base);
+    padding: 12px 24px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+    .recently-viewed-stripe h5 {
+        font-size: 13px;
+        color: var(--text-muted-clay);
+        text-transform: uppercase;
+    }
+
+.recent-items-flex-row {
+    display: flex;
+    gap: 12px;
+}
+
+.recent-thumb-node {
+    width: 45px;
+    height: 45px;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+    .recent-thumb-node img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.category-layout-engine {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 32px;
+    padding: 0 24px;
+}
+
+.sidebar-filters-panel {
+    background-color: var(--surface-nude-base);
+    padding: 24px;
+    border-radius: var(--radius-premium-md);
+    height: fit-content;
+}
+
+.filter-group {
+    margin-bottom: 24px;
+}
+
+    .filter-group h4 {
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+.filter-options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.custom-chk-label {
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-apply-filters {
+    width: 100%;
+    background-color: var(--accent-clay-deep);
+    color: var(--bg-warm-canvas);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+
+/* --- Added during rebuild: page title, sidebar/grid layout wrapper, and the
+   recently-viewed strip container - the original split only carried over the filter
+   controls and grid item styling, not this outer structure. --- */
+.category-title-heading {
+    max-width: 1200px;
+    margin: 30px auto 10px;
+    padding: 0 24px;
+    color: var(--text-pure-dark);
+}
+
+.category-page-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 50px;
+}
+
+.category-filters-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.category-filters-sidebar h4 {
+    margin-top: 18px;
+    margin-bottom: 6px;
+    color: var(--text-pure-dark);
+    font-size: 0.9rem;
+}
+
+.category-filters-sidebar label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted-clay);
+}
+
+.category-filters-sidebar input[type="number"] {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: var(--radius-premium-md);
+    border: 1px solid var(--surface-nude-base);
+    margin-bottom: 6px;
+}
+
+.recently-viewed-strip {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 20px;
+}
+
+.recently-viewed-strip h3 {
+    font-size: 1.1rem;
+    color: var(--text-pure-dark);
+    margin-bottom: 12px;
+}
+
+@media (max-width: 900px) {
+    .category-page-layout { grid-template-columns: 1fr; }
+}
+
+/* --- Standalone build: category pills (jump between categories) and the clear-filters link. --- */
+.category-pills-row {
+    max-width: 1200px;
+    margin: 0 auto 18px;
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.category-pill {
+    padding: 8px 16px;
+    border: 1px solid rgba(34, 34, 34, 0.15);
+    border-radius: 999px;
+    background: none;
+    color: var(--text-pure-dark);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition-premium);
+}
+
+.category-pill:hover {
+    background: var(--surface-nude-base);
+}
+
+.category-pill.active {
+    background: var(--accent-clay-deep);
+    border-color: var(--accent-clay-deep);
+    color: var(--bg-warm-canvas);
+}
+
+.btn-clear-filters {
+    margin-top: 14px;
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--highlight-red);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: left;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .category-pills-row {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 6px;
+    }
+
+    .category-pill {
+        flex: none;
+    }
+}
+
+/* The "Filters" button only exists on phones (see responsive.css); on larger screens the
+   sidebar is always visible. */
+.btn-toggle-filters {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    margin: 0 14px 14px;
+    padding: 10px 18px;
+    border: 1px solid rgba(34, 34, 34, 0.15);
+    border-radius: 999px;
+    background: var(--pure-white);
+    color: var(--text-pure-dark);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-toggle-filters[aria-expanded="true"] {
+    background: var(--accent-clay-deep);
+    border-color: var(--accent-clay-deep);
+    color: var(--bg-warm-canvas);
+}

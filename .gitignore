@@ -1,0 +1,25 @@
+# Visual Studio & Editors
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.sln
+
+# Dependencies & Build Output (في حال استخدام حزم Node.js أو أدوات بناء مستقبلية)
+node_modules/
+dist/
+build/
+
+# OS Generated Files (ملفات النظام المخفية)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# Environment & Local Configuration Files
+.env
+.env.local

@@ -1,0 +1,187 @@
+/* navbar.css - Rounded-frame navbar layout, nav links, search dropdown, auth trigger buttons. Moved as-is from the original stylesheet. */
+/* ==========================================================================
+   Navbar Layout Structure (Rounded Frames, Highlighted & Detached Look)
+   ========================================================================== */
+.navbar-wrapper {
+    position: fixed;
+    top: 32px;
+    left: 0;
+    width: 100%;
+    padding: 0 24px;
+    z-index: 1000;
+}
+
+.custom-navbar {
+    background-color: var(--surface-nude-base);
+    border: 1px solid rgba(34, 34, 34, 0.08);
+    border-radius: var(--radius-premium-lg);
+    height: var(--navbar-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    box-shadow: 0 8px 32px rgba(110, 106, 100, 0.05);
+}
+
+.nav-brand {
+    font-size: 26px;
+    font-weight: 800;
+    cursor: pointer;
+    letter-spacing: -0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Inside bordered capsule frames for navigation tags */
+.menu-item-box {
+    border: 1px solid rgba(34, 34, 34, 0.15);
+    border-radius: 20px;
+    padding: 6px 18px;
+    transition: var(--transition-premium);
+    background-color: transparent;
+}
+
+    .menu-item-box a {
+        text-decoration: none;
+        color: var(--text-pure-dark);
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .menu-item-box:hover {
+        background-color: var(--accent-clay-deep);
+        border-color: var(--accent-clay-deep);
+    }
+
+        .menu-item-box:hover a {
+            color: var(--bg-warm-canvas);
+        }
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Smart Search Dropdown */
+.search-container {
+    position: relative;
+}
+
+    .search-container input {
+        background-color: var(--bg-warm-canvas);
+        border: 1px solid rgba(34, 34, 34, 0.1);
+        border-radius: 20px;
+        padding: 8px 16px;
+        outline: none;
+        width: 180px;
+        font-size: 13px;
+        transition: var(--transition-premium);
+    }
+
+        .search-container input:focus {
+            width: 260px;
+            border-color: var(--accent-clay-deep);
+        }
+
+.search-dropdown {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    background-color: var(--pure-white);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    display: none;
+    flex-direction: column;
+    padding: 8px 0;
+    z-index: 100;
+}
+
+    .search-dropdown.visible {
+        display: flex;
+    }
+
+.search-history-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+    .search-history-row:hover {
+        background-color: var(--bg-warm-canvas);
+    }
+
+.btn-clear-search-node {
+    background: none;
+    border: none;
+    color: var(--highlight-red);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.nav-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    color: var(--text-pure-dark);
+}
+
+.badge-count {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background-color: var(--highlight-red);
+    color: var(--pure-white);
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+/* Auth Navigation Buttons */
+.auth-triggers {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-nav-auth {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-premium);
+}
+
+    .btn-nav-auth.login-style {
+        background: transparent;
+        color: var(--text-pure-dark);
+        border: 1px solid var(--accent-clay-deep);
+    }
+
+    .btn-nav-auth.signup-style {
+        background-color: var(--accent-clay-deep);
+        color: var(--bg-warm-canvas);
+    }
+
+    .btn-nav-auth:hover {
+        opacity: 0.8;
+    }
+
+
+/* --- Added during rebuild: empty-state text inside the search history dropdown. --- */
+.search-dropdown-empty {
+    padding: 14px;
+    color: var(--text-muted-clay);
+    font-size: 0.85rem;
+}

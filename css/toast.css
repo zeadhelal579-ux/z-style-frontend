@@ -1,0 +1,86 @@
+/* toast.css - Global undo toast notification shown after removing a cart item. Moved as-is from the original stylesheet. */
+/* Global Toast Notification Setup */
+.global-undo-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--accent-clay-deep);
+    color: var(--bg-warm-canvas);
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    display: none;
+    align-items: center;
+    gap: 20px;
+    z-index: 3000;
+    font-size: 14px;
+}
+
+    .global-undo-toast.active {
+        display: flex;
+        animation: toastSlideIn 0.3s ease;
+    }
+
+@keyframes toastSlideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.btn-toast-undo-action {
+    background-color: var(--bg-warm-canvas);
+    color: var(--text-pure-dark);
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+
+/* --- Added during rebuild: toast container + inner bar markup used by components/toast.js
+   (the original CSS had toast styling for the old inline structure; this is the updated
+   shape with a dedicated #toast-container root). --- */
+.global-undo-toast-container {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-premium);
+    z-index: 3000; /* above the navbar, profile panel and chatbot button */
+    width: max-content;
+    max-width: calc(100vw - 32px);
+}
+
+.global-undo-toast-container.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+.undo-toast-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--text-pure-dark);
+    color: var(--pure-white);
+    padding: 14px 22px;
+    border-radius: var(--radius-premium-md);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.toast-action-btn {
+    background: none;
+    border: none;
+    color: var(--highlight-red);
+    font-weight: 700;
+    cursor: pointer;
+}

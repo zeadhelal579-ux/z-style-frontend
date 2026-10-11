@@ -1,0 +1,75 @@
+/* base.css - Global resets, typography base, top announcement bar, and the core SPA view show/hide mechanism (.spa-view / .active). Two non-adjacent blocks from the original stylesheet combined here since both are foundational/global concerns. */
+/* Base Adjustments */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    letter-spacing: -0.2px;
+}
+
+body {
+    background-color: var(--bg-warm-canvas);
+    color: var(--text-pure-dark);
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+/* Global Top Announcement Bar */
+.top-bar {
+    background-color: var(--accent-clay-deep);
+    color: var(--bg-warm-canvas);
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 8px 0;
+    letter-spacing: 1px;
+    z-index: 1001;
+    position: relative;
+}
+
+/* ==========================================================================
+   SPA Core Views Architecture Controls
+   ========================================================================== */
+.spa-container {
+    padding-top: 140px;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.spa-view {
+    display: none;
+    animation: fadeInView 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+    .spa-view.active {
+        display: block;
+    }
+
+@keyframes fadeInView {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* --- Added during rebuild: global utility classes referenced throughout js/ but never
+   defined anywhere in the original stylesheet split. .hidden in particular is load-bearing -
+   every show/hide toggle in the new JS (badges, error messages, empty states, dropdowns)
+   depends on this one rule actually existing. --- */
+.hidden {
+    display: none !important;
+}
+
+.section-heading-centered {
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--text-pure-dark);
+    margin: 40px 0 24px;
+}

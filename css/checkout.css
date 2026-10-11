@@ -1,0 +1,127 @@
+/* checkout.css - Checkout view: shipping/billing form and payment method radio group. Moved as-is from the original stylesheet. */
+/* ==========================================================================
+   Checkout Structural Layout Framework (Mirroring Image 7 Layout)
+   ========================================================================== */
+.checkout-structural-grid {
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.checkout-billing-shipping-details {
+    background-color: var(--pure-white);
+    padding: 40px;
+    border-radius: var(--radius-premium-md);
+}
+
+.payment-methods-selector-group {
+    margin: 30px 0;
+}
+
+    .payment-methods-selector-group h4 {
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+    }
+
+.gateway-radio-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--bg-warm-canvas);
+    padding: 14px 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.btn-submit-order-final {
+    width: 100%;
+    background-color: var(--accent-clay-deep);
+    color: var(--bg-warm-canvas);
+    border: none;
+    padding: 16px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/* --- Added during rebuild: inline error message + payment-option label text (the radio
+   input/box styling already existed, just not the inner label span). --- */
+.checkout-error-message {
+    color: var(--highlight-red);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.gateway-label {
+    color: var(--text-pure-dark);
+}
+
+/* --- Standalone build: read-only summary of the bag next to the payment form. --- */
+.checkout-order-summary {
+    background-color: var(--pure-white);
+    padding: 32px;
+    border-radius: var(--radius-premium-md);
+}
+
+.checkout-order-summary h3 {
+    margin-bottom: 14px;
+}
+
+.checkout-summary-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--surface-nude-base);
+}
+
+.checkout-summary-row img {
+    width: 52px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: var(--bg-warm-canvas);
+}
+
+.checkout-summary-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 0.9rem;
+}
+
+.checkout-summary-meta {
+    color: var(--text-muted-clay);
+    font-size: 0.8rem;
+}
+
+.checkout-summary-price {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.checkout-order-summary .summary-meta-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+@media (max-width: 860px) {
+    .checkout-structural-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.checkout-summary-name {
+    font-weight: 600;
+}

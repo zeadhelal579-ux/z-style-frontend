@@ -1,0 +1,153 @@
+/* cart.css - Cart view: item rows, quantity widget, order summary panel. Moved as-is from the original stylesheet. */
+/* ==========================================================================
+   Cart View Structural Framework (Layout Mirroring Image 10 Specs)
+   ========================================================================== */
+.cart-page-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 32px;
+    padding: 0 24px;
+}
+
+.cart-items-main-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cart-row-node {
+    display: grid;
+    grid-template-columns: 100px 2fr 1fr 1fr 40px;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--pure-white);
+    padding: 16px;
+    border-radius: var(--radius-premium-md);
+}
+
+    .cart-row-node img {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+.quantity-modifier-widget {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-qty-modifier {
+    background-color: var(--bg-warm-canvas);
+    border: 1px solid rgba(34,34,34,0.1);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.btn-remove-cart-item {
+    background: none;
+    border: none;
+    color: var(--highlight-red);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.cart-checkout-summary-panel {
+    background-color: var(--surface-nude-base);
+    padding: 30px;
+    border-radius: var(--radius-premium-md);
+    height: fit-content;
+}
+
+.summary-meta-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-size: 15px;
+}
+
+    .summary-meta-row.bold-total {
+        border-top: 1px solid rgba(0,0,0,0.08);
+        padding-top: 16px;
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+.btn-proceed-to-checkout {
+    width: 100%;
+    background-color: var(--accent-clay-deep);
+    color: var(--bg-warm-canvas);
+    border: none;
+    padding: 16px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+
+/* --- Added during rebuild: individual cart-row layout (image, info, qty stepper, remove
+   button) - the original file had the page shell/summary panel but not this. --- */
+.cart-item-row {
+    display: grid;
+    grid-template-columns: 80px 1fr auto auto;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--surface-nude-base);
+}
+
+.cart-item-row img {
+    width: 80px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: var(--radius-premium-md);
+}
+
+.cart-item-info h4 {
+    font-size: 0.95rem;
+    color: var(--text-pure-dark);
+    margin-bottom: 4px;
+}
+
+.cart-item-meta {
+    color: var(--text-muted-clay);
+    font-size: 0.82rem;
+    margin-bottom: 4px;
+}
+
+.cart-item-price {
+    font-weight: 600;
+    color: var(--text-pure-dark);
+}
+
+.cart-qty-stepper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-qty-stepper button {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--surface-nude-base);
+    background: var(--bg-warm-canvas);
+    cursor: pointer;
+}
+
+.cart-remove-btn {
+    background: none;
+    border: none;
+    color: var(--highlight-red);
+    cursor: pointer;
+    font-size: 0.85rem;
+}

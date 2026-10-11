@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-Style | Premium Fashion Store</title>
+    <meta name="description" content="Z-Style - warm, modern everyday fashion: pants, t-shirts, hoodies, shirts, dresses, bags, accessories and shoes.">
+    <meta name="theme-color" content="#faf6f0">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/category.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/product-detail.css">
+    <link rel="stylesheet" href="css/offers.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/wishlist.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/orders.css">
+    <link rel="stylesheet" href="css/complaints.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <noscript><p style="padding:24px;text-align:center">Z-Style needs JavaScript to run. Please enable it and reload the page.</p></noscript>
+    <div class="top-bar">
+        <span>FREE SHIPPING ON ORDERS OVER 3000 EGP &bull; EASY 30-DAY RETURNS</span>
+    </div>
+
+    <header class="navbar-wrapper">
+        <div class="custom-navbar">
+            <div class="nav-brand" data-action="navigate" data-target="home">Z-Style</div>
+
+            <button class="hamburger-menu-btn" type="button" data-action="toggle-mobile-menu" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav-menu" id="nav-menu">
+                <div class="menu-item-box"><a href="#/home" data-action="navigate" data-target="home">Home</a></div>
+                <div class="menu-item-box"><a href="#/category/pants" data-action="navigate" data-target="category" data-param="pants">Pants</a></div>
+                <div class="menu-item-box"><a href="#/category/t-shirts" data-action="navigate" data-target="category" data-param="t-shirts">T-Shirts</a></div>
+                <div class="menu-item-box"><a href="#/category/hoodies" data-action="navigate" data-target="category" data-param="hoodies">Hoodies</a></div>
+                <div class="menu-item-box"><a href="#/offers" data-action="navigate" data-target="offers">Offers</a></div>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="search-container">
+                    <input type="text" id="global-search" placeholder="Search products...">
+                    <div class="search-dropdown" id="search-dropdown"></div>
+                </div>
+
+                <button class="nav-icon-btn" data-action="navigate" data-target="wishlist" title="Wishlist">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
+                    <span class="badge-count hidden" id="wishlist-badge">0</span>
+                </button>
+
+                <button class="nav-icon-btn" data-action="navigate" data-target="cart" title="Shopping Cart">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" /><line x1="3" y1="6" x2="21" y2="6" /><path d="M16 10a4 4 0 0 1-8 0" /></svg>
+                    <span class="badge-count hidden" id="cart-count-badge">0</span>
+                </button>
+
+                <div class="auth-triggers" id="navbar-guest-controls">
+                    <button class="btn-nav-auth login-style" data-action="navigate" data-target="auth">Log In</button>
+                    <button class="btn-nav-auth signup-style" data-action="navigate" data-target="auth">Sign Up</button>
+                </div>
+
+                <div class="auth-triggers hidden" id="navbar-user-controls">
+                    <button class="btn-nav-profile" type="button" data-action="open-profile-panel">
+                        <span class="profile-icon-circle">&#9679;</span>
+                        <span id="navbar-user-name">Account</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="spa-container">
+
+        <section id="view-home" class="spa-view active">
+            <div class="hero-grid-premium">
+                <div class="hero-card main-offer">
+                    <img src="assets/hero/hero-main.svg" alt="Best Offer" width="1200" height="700">
+                    <div class="hero-overlay-content">
+                        <span class="tag">SEASONAL PROMO</span>
+                        <h2>BEST OFFER OUT THERE</h2>
+                        <p>Get up to 20% off on promo-tagged pieces across every category.</p>
+                        <button class="btn-hero-action" type="button" data-action="navigate" data-target="offers">Explore Offers</button>
+                    </div>
+                </div>
+                <div class="hero-sub-column">
+                    <div class="hero-card sub-seller">
+                        <img src="assets/hero/hero-men.svg" alt="Men Best Seller" width="800" height="450">
+                        <div class="hero-overlay-content">
+                            <span class="tag">TRENDING NOW</span>
+                            <h3>MEN'S BEST SELLER</h3>
+                            <button class="btn-hero-action-sm" type="button" data-action="navigate" data-target="category" data-param="shirts">Shop Men</button>
+                        </div>
+                    </div>
+                    <div class="hero-card sub-seller">
+                        <img src="assets/hero/hero-women.svg" alt="Women Best Seller" width="800" height="450">
+                        <div class="hero-overlay-content">
+                            <span class="tag">ESSENTIALS</span>
+                            <h3>WOMEN'S BEST SELLER</h3>
+                            <button class="btn-hero-action-sm" type="button" data-action="navigate" data-target="category" data-param="dresses">Shop Women</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detached-trust-wrapper">
+                <div class="trust-item">
+                    <span class="trust-icon">&#10148;</span>
+                    <div class="trust-meta">
+                        <h4>Secured Express Shipping</h4>
+                        <p>Fully trackable premium packaging</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">&#10148;</span>
+                    <div class="trust-meta">
+                        <h4>Easy 30-Day Returns</h4>
+                        <p>No questions asked</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">&#10148;</span>
+                    <div class="trust-meta">
+                        <h4>Cash on Delivery Available</h4>
+                        <p>Plus Visa, Vodafone Cash and Fawry</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-heading-centered">Shop by Category</h2>
+            <div class="category-circles-slider" id="home-category-circles"></div>
+        </section>
+
+        <section id="view-category" class="spa-view">
+            <h2 id="category-page-title" class="category-title-heading">Category</h2>
+            <div id="category-pills" class="category-pills-row"></div>
+            <button type="button" class="btn-toggle-filters" data-action="toggle-filters" aria-expanded="false" aria-controls="category-filters">Filters</button>
+
+            <div id="recently-viewed-strip" class="recently-viewed-strip hidden">
+                <h3>Recently Viewed</h3>
+                <div class="products-dynamic-grid"></div>
+            </div>
+
+            <div class="category-page-layout">
+                <aside class="category-filters-sidebar" id="category-filters">
+                    <h4>Gender</h4>
+                    <label><input type="radio" name="gender-filter" data-filter="gender" value="Men"> Men</label>
+                    <label><input type="radio" name="gender-filter" data-filter="gender" value="Women"> Women</label>
+                    <label><input type="radio" name="gender-filter" data-filter="gender" value="Unisex"> Unisex</label>
+
+                    <h4>Colour</h4>
+                    <label><input type="checkbox" data-filter="color" value="Black"> Black</label>
+                    <label><input type="checkbox" data-filter="color" value="Clay"> Clay</label>
+                    <label><input type="checkbox" data-filter="color" value="Sand"> Sand</label>
+                    <label><input type="checkbox" data-filter="color" value="Olive"> Olive</label>
+                    <label><input type="checkbox" data-filter="color" value="Ivory"> Ivory</label>
+
+                    <h4>Price (EGP)</h4>
+                    <input type="number" id="filter-price-min" placeholder="Min" min="0">
+                    <input type="number" id="filter-price-max" placeholder="Max" min="0">
+
+                    <button type="button" class="btn-clear-filters" data-action="clear-filters">Clear filters</button>
+                </aside>
+
+                <div class="products-dynamic-grid" id="category-products-grid"></div>
+            </div>
+        </section>
+
+        <section id="view-product" class="spa-view">
+            <div class="product-detail-layout">
+                <div class="product-gallery-column">
+                    <div class="product-gallery-main" id="product-gallery-main"></div>
+                    <div class="product-gallery-thumbs" id="product-gallery-thumbs"></div>
+                </div>
+                <div class="product-detail-info-column">
+                    <h1 id="product-detail-name"></h1>
+                    <div id="product-detail-price" class="product-detail-price-row"></div>
+                    <p id="product-detail-description" class="product-detail-description"></p>
+
+                    <h4>Colour: <span id="selected-color-label" class="selected-option-label"></span></h4>
+                    <div id="product-color-swatches" class="color-swatches-row"></div>
+
+                    <h4>Size</h4>
+                    <div id="product-size-buttons" class="size-buttons-row"></div>
+
+                    <button class="btn-add-to-bag" type="button" data-action="add-to-bag">Add to Bag</button>
+                    <button class="btn-toggle-wishlist-detail" id="product-wishlist-btn" type="button" data-action="toggle-wishlist">&#9825; Save to Wishlist</button>
+                </div>
+            </div>
+
+            <h3 class="section-heading-centered">You Might Also Like</h3>
+            <div class="products-dynamic-grid" id="similar-products-strip"></div>
+        </section>
+
+        <section id="view-offers" class="spa-view">
+            <h2 class="section-heading-centered">Current Offers</h2>
+            <div class="products-dynamic-grid offers-grid" id="offers-products-grid"></div>
+        </section>
+
+        <section id="view-auth" class="spa-view">
+            <div class="auth-module-card">
+                <div class="auth-tabs-toggle">
+                    <button type="button" id="tab-login" class="auth-tab-btn active">Log In</button>
+                    <button type="button" id="tab-signup" class="auth-tab-btn">Sign Up / Register</button>
+                </div>
+
+                <p id="auth-error-message" class="auth-error-message hidden"></p>
+
+                <form id="auth-universal-form">
+                    <div class="form-input-wrapper">
+                        <label for="auth-email">Email Address</label>
+                        <input type="email" id="auth-email" required placeholder="name@example.com">
+                    </div>
+
+                    <div id="signup-fields-extended" class="hidden-fields-group">
+                        <div class="form-row-twin">
+                            <div class="form-input-wrapper">
+                                <label for="auth-fname">First Name</label>
+                                <input type="text" id="auth-fname" placeholder="John">
+                            </div>
+                            <div class="form-input-wrapper">
+                                <label for="auth-lname">Last Name</label>
+                                <input type="text" id="auth-lname" placeholder="Doe">
+                            </div>
+                        </div>
+                        <div class="form-input-wrapper">
+                            <label for="auth-phone">Phone Number</label>
+                            <input type="tel" id="auth-phone" placeholder="+20 1XX XXX XXXX">
+                        </div>
+                    </div>
+
+                    <div class="form-input-wrapper">
+                        <label for="auth-password">Password</label>
+                        <div class="password-input-relative-container">
+                            <input type="password" id="auth-password" required placeholder="Enter secure password">
+                            <span class="password-toggle-eye" data-action="toggle-password-visibility" data-target="auth-password">&#128065;</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions-row">
+                        <button type="button" class="btn-form-secondary" id="reset-auth-form">Reset fields</button>
+                        <button type="submit" class="btn-form-primary" id="auth-submit-btn">Continue</button>
+                    </div>
+                </form>
+                <p class="demo-mode-note hidden" data-demo-note>Demo store: accounts, bags and orders are saved in this browser only.</p>
+            </div>
+        </section>
+
+        <section id="view-wishlist" class="spa-view">
+            <div class="wishlist-functional-header">
+                <h2>Your Curated Wishlist</h2>
+            </div>
+
+            <div id="wishlist-empty-message" class="empty-grid-message hidden">Nothing saved yet.</div>
+            <div class="products-dynamic-grid" id="wishlist-products-grid"></div>
+
+            <h3 class="section-heading-centered">Coordinate an Outfit</h3>
+            <div id="outfit-coordination-box" class="mix-match-box"></div>
+        </section>
+
+        <section id="view-cart" class="spa-view">
+            <div class="cart-page-split-layout">
+                <div class="cart-items-main-stack" id="cart-items-list">
+                    <p id="cart-empty-message" class="empty-grid-message hidden">Your bag is empty.</p>
+                </div>
+                <div class="cart-checkout-summary-panel">
+                    <h3>Order Ledger Summary</h3>
+                    <div class="summary-meta-row bold-total">
+                        <span>Total Checkout:</span>
+                        <span id="cart-total-amount">0 EGP</span>
+                    </div>
+                    <button class="btn-proceed-to-checkout" type="button" data-action="go-to-checkout">Proceed To Payment</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-checkout" class="spa-view">
+            <div class="checkout-structural-grid">
+                <div class="checkout-billing-shipping-details">
+                    <h3>Secure Checkout Procedure</h3>
+                    <p class="checkout-error-message hidden"></p>
+                    <form id="checkout-form">
+                        <div class="form-input-wrapper">
+                            <label for="checkout-address">Full Shipping Address</label>
+                            <input type="text" id="checkout-address" name="shippingAddress" required placeholder="Street detail, City, Country">
+                        </div>
+
+                        <div class="payment-methods-selector-group">
+                            <h4>Select Payment Method</h4>
+                            <label class="gateway-radio-box">
+                                <input type="radio" name="paymentMethod" value="CashOnDelivery" checked>
+                                <span class="gateway-label">Cash on Delivery</span>
+                            </label>
+                            <label class="gateway-radio-box">
+                                <input type="radio" name="paymentMethod" value="Visa">
+                                <span class="gateway-label">Credit / Visa Card</span>
+                            </label>
+                            <label class="gateway-radio-box">
+                                <input type="radio" name="paymentMethod" value="VodafoneCash">
+                                <span class="gateway-label">Vodafone Cash</span>
+                            </label>
+                            <label class="gateway-radio-box">
+                                <input type="radio" name="paymentMethod" value="Fawry">
+                                <span class="gateway-label">Fawry Pay</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn-submit-order-final">Complete Secure Processing</button>
+                    </form>
+                    <p class="demo-mode-note hidden" data-demo-note>Demo store: no real payment is taken and nothing is shipped.</p>
+                </div>
+
+                <aside class="checkout-order-summary">
+                    <h3>Your Items</h3>
+                    <div id="checkout-summary-items"></div>
+                    <div class="summary-meta-row bold-total">
+                        <span>Total:</span>
+                        <span id="checkout-summary-total">0 EGP</span>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="view-orders" class="spa-view">
+            <h2 class="section-heading-centered">Your Orders</h2>
+            <div class="orders-layout">
+                <div id="orders-list" class="orders-list-column"></div>
+                <div id="order-detail-panel" class="order-detail-panel hidden"></div>
+            </div>
+        </section>
+
+        <section id="view-complaints" class="spa-view">
+            <h2 class="section-heading-centered">Complaints</h2>
+            <div class="complaints-layout">
+                <form id="complaint-form" class="complaint-form-card">
+                    <p class="complaint-error-message hidden"></p>
+                    <div class="form-input-wrapper">
+                        <label for="complaint-order-select">Related Order</label>
+                        <select id="complaint-order-select"></select>
+                    </div>
+                    <div class="form-input-wrapper">
+                        <label for="complaint-message">Describe the issue</label>
+                        <textarea id="complaint-message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-form-primary">Submit Complaint</button>
+                </form>
+                <div id="complaints-list" class="complaints-list-column"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="profile-side-panel" id="profile-side-panel">
+        <button class="modal-close-cross" type="button" data-action="close-profile-panel">&#10005;</button>
+        <h3 id="profile-name"></h3>
+        <p><strong>Email:</strong> <span id="profile-email"></span></p>
+        <p><strong>Phone:</strong> <span id="profile-phone"></span></p>
+        <div class="profile-links">
+            <button class="profile-link-btn" type="button" data-action="profile-navigate" data-target="orders">My Orders</button>
+            <button class="profile-link-btn" type="button" data-action="profile-navigate" data-target="complaints">Complaints</button>
+        </div>
+        <button class="btn-form-secondary profile-logout-btn" type="button" data-action="logout">Log Out</button>
+    </div>
+
+    <!-- Lives here, outside <main>: a full-screen pop-up inside a view is clipped by the view's own
+         animated transform and ends up underneath the navbar. -->
+    <div id="wishlist-compare-panel" class="utility-popup-modal"></div>
+
+    <div id="toast-container" class="global-undo-toast-container"></div>
+
+    <div class="chatbot-floating-anchor">
+        <button class="chatbot-toggle-sphere" type="button" data-action="toggle-chatbot" aria-label="Open chatbot">&#10024;<span class="chatbot-label"> Chatbot</span></button>
+        <div class="chatbot-window-box" id="chatbot-window">
+            <div class="chat-header-bar">
+                <span>Z-Style Assistant</span>
+                <button class="btn-close-chat" type="button" data-action="toggle-chatbot">&#10005;</button>
+            </div>
+            <div class="chat-logs-stream" id="chatbot-stream">
+                <div class="chat-msg system-node">مرحباً بك في Z-Style! أنا مساعدك الشخصي لتنسيق ملابسك واختيار المقاسات والألوان المناسبة. كيف يمكنني مساعدتك اليوم؟</div>
+            </div>
+            <div class="chat-input-row">
+                <input type="text" id="chatbot-input-field" placeholder="اكتب سؤالك هنا...">
+                <button class="btn-send-chat" type="button" data-action="send-chat-message">&#10148;</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
